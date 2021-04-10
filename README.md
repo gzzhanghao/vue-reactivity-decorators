@@ -24,7 +24,7 @@ console.log(counter.text) // Count: 2
 
 ### @ref
 
-Mark a property as reactive.
+Mark a property reactive.
 
 __Example:__
 
@@ -46,7 +46,7 @@ __See also:__
 
 ### @ref.shallow
 
-Mark a property as reactive but keep its value clean.
+Mark a property reactive but keep its value clean.
 
 __Example:__
 
@@ -68,7 +68,7 @@ __See also:__
 
 ### @computed
 
-Creates an reacitve value that is derived from other reacitve values, but won't be recomputed unless one of the underlying reacitve values changes.
+Creates a reacitve value that is derived from other reacitve values, but won't be recomputed unless one of the underlying reacitve values changes.
 
 __Example:__
 
