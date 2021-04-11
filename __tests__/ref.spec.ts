@@ -1,4 +1,4 @@
-import { watchEffect } from '@vue/runtime-core';
+import { effect } from '@vue/reactivity';
 import { ref } from '../src';
 
 describe('ref', () => {
@@ -18,10 +18,8 @@ describe('ref', () => {
   it('reactive', () => {
     let { value } = test;
 
-    watchEffect(() => {
+    effect(() => {
       value = test.value;
-    }, {
-      flush: 'sync',
     });
 
     test.value += 1;
@@ -31,10 +29,8 @@ describe('ref', () => {
   it('deep reactive', () => {
     let { value } = test.reactive;
 
-    watchEffect(() => {
+    effect(() => {
       value = test.reactive.value;
-    }, {
-      flush: 'sync',
     });
 
     test.reactive.value += 1;
@@ -44,10 +40,8 @@ describe('ref', () => {
   it('shallow', () => {
     let { value } = test.shallow;
 
-    watchEffect(() => {
+    effect(() => {
       value = test.shallow.value;
-    }, {
-      flush: 'sync',
     });
 
     test.shallow.value += 1;

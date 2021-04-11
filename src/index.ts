@@ -1,4 +1,4 @@
-import * as vue from 'vue';
+import * as vue from '@vue/reactivity';
 import { refToDesc, getBaseValue } from './utils';
 
 export function ref(target: Object, key: PropertyKey, desc?: any): any {

@@ -1,4 +1,4 @@
-import * as vue from 'vue';
+import * as vue from '@vue/reactivity';
 
 export function refToDesc<T>(createRef: (instance: any) => vue.Ref<T>) {
   const refMap = new WeakMap<any, vue.Ref<T>>();

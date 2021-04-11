@@ -1,4 +1,4 @@
-import { ref, watchEffect } from '@vue/runtime-core';
+import { ref, effect } from '@vue/reactivity';
 import { computed } from '../src';
 
 describe('computed', () => {
@@ -53,10 +53,8 @@ describe('computed', () => {
   it('trigger effects', () => {
     let value = test.onlyGetter;
 
-    watchEffect(() => {
+    effect(() => {
       value = test.onlyGetter;
-    }, {
-      flush: 'sync',
     });
 
     expect(value).toBe(1);
