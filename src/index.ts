@@ -5,9 +5,11 @@ export function ref(target: Object, key: PropertyKey, desc?: any): any {
   return refToDesc(() => vue.ref(getBaseValue(desc)));
 }
 
-ref.shallow = function shallowRef(target: Object, key: PropertyKey, desc?: any): any {
+export function shallowRef(target: Object, key: PropertyKey, desc?: any): any {
   return refToDesc(() => vue.shallowRef(getBaseValue(desc)));
-};
+}
+
+ref.shallow = shallowRef;
 
 export function computed(target: Object, key: PropertyKey, desc: PropertyDescriptor): any {
   const { get, set } = desc;
