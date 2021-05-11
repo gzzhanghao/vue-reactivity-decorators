@@ -7,7 +7,7 @@ const formats = [
     format: 'cjs',
   },
   {
-    file: 'dist/index.mjs',
+    file: 'dist/index.esm.js',
     format: 'es',
   },
 ];
